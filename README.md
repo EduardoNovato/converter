@@ -2,8 +2,6 @@
 
 Una aplicación web moderna construida con Astro y React que permite convertir videos de YouTube, Facebook y TikTok a formatos MP3 y MP4.
 
-![Video Converter Preview](https://converter-eta-five.vercel.app/)
-
 ## 🚀 Características
 
 - ✨ Interfaz moderna y responsiva
