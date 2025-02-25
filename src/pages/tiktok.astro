@@ -2,18 +2,35 @@
 import Layout from '../layouts/Layout.astro';
 import VideoConverter from '../components/VideoConverter';
 import '../styles/global.css';
+
+const title = "Descarga Videos de TikTok a MP3 o MP4 | Vituve";
+const description = "Convierte y descarga videos de TikTok a MP3 o MP4 en segundos. Gratis, sin necesidad de instalar aplicaciones.";
+const url = "https://tudominio.com/tiktok";
+const image = "/public/tiktok-preview.webp";
 ---
 
-<Layout title="TikTok Converter">
+<Layout title={title}>
+  <head>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={url} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+
   <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
+    <section class="text-center mb-12">
       <h1 class="text-4xl font-bold text-gray-900 mb-4">
-        Convertir videos de TikTok a MP3/MP4
+        Descarga Videos de TikTok en MP3 o MP4 Gratis
       </h1>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-        Descarga tus videos favoritos de TikTok en formato MP3 o MP4 con la mejor calidad
+        Convierte videos de TikTok en alta calidad sin marcas de agua. Rápido, gratuito y sin registro.
       </p>
-    </div>
-    <VideoConverter platform="tiktok" client:load />
+    </section>
+    <section>
+      <VideoConverter platform="tiktok" client:load />
+    </section>
   </main>
 </Layout>

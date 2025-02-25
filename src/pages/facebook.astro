@@ -2,17 +2,31 @@
 import Layout from '../layouts/Layout.astro';
 import VideoConverter from '../components/VideoConverter';
 import '../styles/global.css';
+
+const title = "Convierte Videos de Facebook a MP3 o MP4 Gratis | Vituve";
+const description = "Descarga videos de Facebook en formato MP3 o MP4 con la mejor calidad. Conversión rápida, gratuita y sin límite.";
 ---
-<Layout title='Facebook Converter'>
+
+<Layout title={title}>
+  <head>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+
   <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
+    <section class="text-center mb-12">
       <h1 class="text-4xl font-bold text-gray-900 mb-4">
-        Convertir videos de YouTube a MP3/MP4
+        Convierte Videos de Facebook a MP3 o MP4
       </h1>
       <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-        Descarga tus videos favoritos de Facebook en formato MP3 o MP4 con la mejor calidad
+        Descarga y convierte videos de Facebook en alta calidad. Conversión rápida y gratuita sin límites.
       </p>
-    </div>
-    <VideoConverter platform="facebook" client:load />
+    </section>
+    <section>
+      <VideoConverter platform="facebook" client:load />
+    </section>
   </main>
 </Layout>

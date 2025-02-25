@@ -2,37 +2,57 @@
 import Layout from '../layouts/Layout.astro';
 import ConverterCard from '../components/ConverterCard.astro';
 import '../styles/global.css';
+
+const title = "Convierte Videos de YouTube, Facebook y TikTok - Vituve";
+const description = "Descarga y convierte videos de YouTube, Facebook y TikTok a MP3 o MP4 de alta calidad gratis. Rápido, fácil y sin límites.";
 ---
 
-<Layout title="Video Converter - Inicio">
+<Layout title={title}>
+  <head>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+
   <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
+    <section class="text-center mb-16">
       <h1 class="text-5xl font-extrabold text-gray-900 mb-6">
-        Convierte videos de tus redes sociales favoritas
+        Convierte videos de YouTube, Facebook y TikTok a MP3 o MP4
       </h1>
       <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Descarga y convierte fácilmente videos de YouTube, Facebook y TikTok a formatos MP3 o MP4 de alta calidad.
+        Usa nuestro conversor online para descargar videos fácilmente en alta calidad. Sin límites y completamente gratis.
       </p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-8">
-      <ConverterCard
-        title="YouTube a MP3/MP4"
-        description="Convierte videos de YouTube a formato MP3 o MP4 de alta calidad"
-        icon="youtube"
-        href="/youtube"
-      />
-      <ConverterCard
-        title="Facebook a MP3/MP4"
-        description="Descarga videos de Facebook en formato MP3 o MP4 fácilmente"
-        icon="facebook"
-        href="/facebook"
-      />
-      <ConverterCard
-        title="TikTok a MP3/MP4"
-        description="Convierte videos de TikTok a formato MP3 o MP4 rápidamente"
-        icon="tiktok"
-        href="/tiktok"
-      />
-    </div>
+    </section>
+
+    <section class="grid md:grid-cols-3 gap-8">
+      <article>
+        <ConverterCard
+          title="YouTube a MP3/MP4"
+          description="Convierte videos de YouTube a formato MP3 o MP4 de alta calidad"
+          icon="youtube"
+          href="/youtube"
+        />
+      </article>
+
+      <article>
+        <ConverterCard
+          title="Facebook a MP3/MP4"
+          description="Descarga videos de Facebook en formato MP3 o MP4 fácilmente"
+          icon="facebook"
+          href="/facebook"
+        />
+      </article>
+
+      <article>
+        <ConverterCard
+          title="TikTok a MP3/MP4"
+          description="Convierte videos de TikTok a formato MP3 o MP4 rápidamente"
+          icon="tiktok"
+          href="/tiktok"
+        />
+      </article>
+    </section>
   </main>
 </Layout>
