@@ -1,22 +1,162 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+interface Props {
+  title: string;
+}
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+const { title } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Convertidor de videos de YouTube, Facebook y TikTok a MP3 y MP4" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-gray-100">
+    <nav class="bg-white shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex">
+            <div class="flex-shrink-0 flex items-center">
+              <a href="/" class="text-2xl font-bold text-indigo-600">VideoConverter</a>
+            </div>
+            <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+              <a 
+                href="/" 
+                class={`inline-flex items-center px-1 pt-1 border-b-2 ${
+                  currentPath === "/" 
+                    ? "border-indigo-500 text-gray-900" 
+                    : "border-transparent text-gray-500 hover:text-gray-900 hover:border-gray-300"
+                }`}
+              >
+                Inicio
+              </a>
+              <a 
+                href="/youtube" 
+                class={`inline-flex items-center px-1 pt-1 border-b-2 ${
+                  currentPath === "/youtube" 
+                    ? "border-indigo-500 text-gray-900" 
+                    : "border-transparent text-gray-500 hover:text-gray-900 hover:border-gray-300"
+                }`}
+              >
+                YouTube
+              </a>
+              <a 
+                href="/facebook" 
+                class={`inline-flex items-center px-1 pt-1 border-b-2 ${
+                  currentPath === "/facebook" 
+                    ? "border-indigo-500 text-gray-900" 
+                    : "border-transparent text-gray-500 hover:text-gray-900 hover:border-gray-300"
+                }`}
+              >
+                Facebook
+              </a>
+              <a 
+                href="/tiktok" 
+                class={`inline-flex items-center px-1 pt-1 border-b-2 ${
+                  currentPath === "/tiktok" 
+                    ? "border-indigo-500 text-gray-900" 
+                    : "border-transparent text-gray-500 hover:text-gray-900 hover:border-gray-300"
+                }`}
+              >
+                TikTok
+              </a>
+            </div>
+          </div>
+          <!-- Menú móvil -->
+          <div class="sm:hidden">
+            <div class="flex items-center -mr-2">
+              <button
+                type="button"
+                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+              >
+                <span class="sr-only">Abrir menú principal</span>
+                <svg
+                  class="block h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menú móvil -->
+      <div class="sm:hidden" id="mobile-menu">
+        <div class="pt-2 pb-3 space-y-1">
+          <a
+            href="/"
+            class={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+              currentPath === "/"
+                ? "bg-indigo-50 border-indigo-500 text-indigo-700"
+                : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700"
+            }`}
+          >
+            Inicio
+          </a>
+          <a
+            href="/youtube"
+            class={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+              currentPath === "/youtube"
+                ? "bg-indigo-50 border-indigo-500 text-indigo-700"
+                : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700"
+            }`}
+          >
+            YouTube
+          </a>
+          <a
+            href="/facebook"
+            class={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+              currentPath === "/facebook"
+                ? "bg-indigo-50 border-indigo-500 text-indigo-700"
+                : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700"
+            }`}
+          >
+            Facebook
+          </a>
+          <a
+            href="/tiktok"
+            class={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+              currentPath === "/tiktok"
+                ? "bg-indigo-50 border-indigo-500 text-indigo-700"
+                : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700"
+            }`}
+          >
+            TikTok
+          </a>
+        </div>
+      </div>
+    </nav>
+    <slot />
+
+    <script>
+      // Toggle mobile menu
+      const button = document.querySelector('[aria-controls="mobile-menu"]');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      button?.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', (!expanded).toString());
+        mobileMenu?.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>
