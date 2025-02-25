@@ -1,48 +1,112 @@
-# Astro Starter Kit: Basics
+# Video Converter Web App
 
-```sh
-npm create astro@latest -- --template basics
+Una aplicación web moderna construida con Astro y React que permite convertir videos de YouTube, Facebook y TikTok a formatos MP3 y MP4.
+
+![Video Converter Preview](https://via.placeholder.com/800x400?text=Video+Converter+Preview)
+
+## 🚀 Características
+
+- ✨ Interfaz moderna y responsiva
+- 🎵 Conversión a MP3 para extraer audio
+- 🎥 Conversión a MP4 para descargar videos
+- 💪 Soporte para múltiples plataformas:
+  - YouTube
+  - Facebook
+  - TikTok
+- 🎨 Diseño adaptativo con Tailwind CSS
+- ⚡ Rendimiento optimizado con Astro
+- 🔒 Validación de URLs
+- 📱 Diseño mobile-first
+
+## 🛠️ Tecnologías Utilizadas
+
+- [Astro](https://astro.build) - Framework web moderno
+- [React](https://reactjs.org) - Biblioteca para interfaces de usuario
+- [Tailwind CSS](https://tailwindcss.com) - Framework CSS utilitario
+- [React Icons](https://react-icons.github.io/react-icons) - Iconos para React
+
+## 📦 Instalación
+
+1. Clona el repositorio:
+```bash
+git clone <url-del-repositorio>
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+2. Instala las dependencias:
+```bash
+npm install
+```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+3. Inicia el servidor de desarrollo:
+```bash
+npm run dev
+```
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+4. Abre [http://localhost:4321](http://localhost:4321) en tu navegador
 
-## 🚀 Project Structure
+## 🚀 Comandos Disponibles
 
-Inside of your Astro project, you'll see the following folders and files:
+| Comando           | Acción                                             |
+|------------------|---------------------------------------------------|
+| `npm install`    | Instala las dependencias del proyecto              |
+| `npm run dev`    | Inicia el servidor de desarrollo en localhost:4321 |
+| `npm run build`  | Construye el proyecto para producción              |
+| `npm run preview`| Previsualiza la construcción de producción         |
 
-```text
+## 📁 Estructura del Proyecto
+
+```
 /
 ├── public/
 │   └── favicon.svg
 ├── src/
+│   ├── components/
+│   │   ├── ConverterCard.astro
+│   │   ├── VideoConverter.tsx
+│   │   └── Welcome.astro
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/
-│       └── index.astro
+│       ├── index.astro
+│       ├── youtube.astro
+│       ├── facebook.astro
+│       └── tiktok.astro
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🎯 Características por Plataforma
 
-## 🧞 Commands
+### YouTube
+- Conversión de videos de YouTube a MP3
+- Conversión de videos de YouTube a MP4
+- Soporte para videos públicos
 
-All commands are run from the root of the project, from a terminal:
+### Facebook
+- Conversión de videos de Facebook a MP3
+- Conversión de videos de Facebook a MP4
+- Soporte para videos públicos
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### TikTok
+- Conversión de videos de TikTok a MP3
+- Conversión de videos de TikTok a MP4
+- Soporte para videos públicos
 
-## 👀 Want to learn more?
+## 🤝 Contribuir
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Las contribuciones son bienvenidas. Por favor, sigue estos pasos:
+
+1. Haz fork del proyecto
+2. Crea una rama para tu característica (`git checkout -b feature/AmazingFeature`)
+3. Haz commit de tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Haz push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE.md](LICENSE.md) para más detalles.
+
+## 📧 Contacto
+
+Tu Nombre - [@tutwitter](https://twitter.com/tutwitter) - email@example.com
+
+Link del Proyecto: [https://github.com/tuusuario/video-converter](https://github.com/tuusuario/video-converter)
